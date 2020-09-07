@@ -1,0 +1,39 @@
+{
+    "name": "charset-changer-cli",
+    "version": "0.0.1",
+    "description": "CharsetChanger GUI - Change the charset for an entire folder recursively.",
+    "main": "main.js",
+    "scripts": {
+        "start": "node_modules/.bin/electron .",
+        "build": "electron-packager ../ CharsetChanger --platform=win32 --arch=x64 --asar",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "charset-changer-cli",
+        "charset-changer",
+        "charsetChanger",
+        "encoding",
+        "changer",
+        "charset",
+        "iconv",
+        "iconv-lite",
+        "chardet",
+        "icu",
+        "detector",
+        "detect",
+        "glob",
+        "utf8",
+        "latin1",
+        "iso8859-1"
+    ],
+    "author": "ecromaneli",
+    "license": "MIT",
+    "dependencies": {
+        "angular": "^1.8.0",
+        "charset-changer": "^2.0.0"
+    },
+    "devDependencies": {
+        "electron": "^8.2.4",
+        "electron-packager": "^15.1.0"
+    }
+}

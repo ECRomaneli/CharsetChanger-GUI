@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app='root'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Charset Changer</title>
+    
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.essentials.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class='dark-theme' ng-controller='AppController'>
+    <form ng-submit='convert()'>
+        <div class="container">
+            <div class="row tight-row">
+                <div class="col">
+                    <label>ROOT PATH</label>
+                    <input ng-model='config.root' type="text" required/>
+                </div>
+                <div class="col icon-btn">
+                    <label>&nbsp;</label>
+                    <button type='button' class='btn-backup backup-{{ config.createBackup }}' ng-click='toggleBackup()' title='Create Backup'>
+                        BKP
+                    </button>
+                </div>
+                <div class="col icon-btn">
+                    <label>&nbsp;</label>
+                    <button type='button' ng-click='getRootPath()' title='Select Root Path'>
+                        <img src="assets/img/folder-open-solid.svg"/>
+                    </button>
+                </div>
+            </div>
+            <div class="row tight-row">
+                <div class="col">
+                    <label>INCLUDE</label>
+                    <input type='text' ng-model='config.search' required>
+                </div>
+                <div class="col">
+                    <label>EXCLUDE</label>
+                    <input type='text' ng-model='config.ignore'>
+                </div>
+            </div>
+            <divider></divider>
+            <div class="row tight-row">
+                <div class="col">
+                    <label>FROM</label>
+                    <input type='text' ng-model='config.from'>
+                </div>
+                <div class="col icon-btn">
+                    <label>&nbsp;</label>
+                    <button type='button' ng-click='toggleCharset()' title='Toggle'>
+                        <img src="assets/img/retweet-solid.svg"/>
+                    </button>
+                </div>
+                <div class="col">
+                    <label>TO</label>
+                    <input type='text' ng-model='config.to' required>
+                </div>
+            </div>
+            <divider></divider>
+            <div class="row">
+                <div class="col">
+                    <div class="row tight-row">
+                        <div class="offset-4"></div>
+                        <div class="col-3">
+                            <button type='button' ng-click='resetConfig()'>Reset</button>
+                        </div>
+                        <div class="col">
+                            <button type='submit'>Convert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <divider></divider> -->
+
+            <div class="loading">
+                <div id="progress-label">{{ progress }}%</div>
+                <div id="progress-bar" style="width:{{ progress }}%"></div>
+            </div>
+        </div>
+    </form>
+
+    <!-- APP CODE -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+</html>
