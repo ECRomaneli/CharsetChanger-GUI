@@ -34,7 +34,7 @@
         "parasitejs": "^1.0.3"
     },
     "devDependencies": {
-        "electron": "^8.0.1",
+        "electron": "^8.2.4",
         "electron-packager": "^14.2.1"
     }
 }
